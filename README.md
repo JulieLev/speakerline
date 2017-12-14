@@ -14,6 +14,8 @@
   * [Getting started with Ruby and Postgres](#getting-started-with-ruby-and-postgres)
   * [Getting the Rails app running](#getting-the-rails-app-running)
     * [Environment variables](#environment-variables)
+    * [Seeding the development database](#seeding-the-development-database)
+    * [Starting the Rails server](#starting-the-rails-server)
   * [Running the tests](#running-the-tests)
   * [Contributing to Speakerline](#contributing-to-speakerline)
 * [Credits](#credits)
@@ -117,6 +119,18 @@ You'll also need to set `RECAPTCHA_SITE_KEY` and `RECAPTCHA_SECRET_KEY`. To get 
 
 Select 'reCAPTCHA V2' and add 'localhost' to the list of domains.
 
+#### Seeding the development database
+
+To seed the development database with some fake speaker, event, proposal, and submission data, run:
+
+```bash
+bundle exec rake db:setup
+```
+
+Be aware: this will overwrite any development data you have previously saved.
+
+#### Starting the Rails server
+
 All we have to do now is start up the Rails server and point our browser to <http://localhost:3000>
 
 ```bash
@@ -141,7 +155,6 @@ bundle exec rake db:test:prepare
 ```
 
 This will create the test database and populate its schema.
-
 
 
 ### Contributing to Speakerline
